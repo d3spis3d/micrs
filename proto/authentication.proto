@@ -28,7 +28,7 @@ message SignInResponse {
 }
 
 message SignOutRequest {
-    string sessionToken = 1;
+    string userUuid = 1;
 }
 
 message SignOutResponse {

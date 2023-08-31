@@ -26,6 +26,15 @@ pub struct UsersImpl {
     username_to_user: HashMap<String, User>,
 }
 
+impl UsersImpl {
+    pub fn new() -> UsersImpl {
+        UsersImpl {
+            uuid_to_user: HashMap::new(),
+            username_to_user: HashMap::new(),
+        }
+    }
+}
+
 impl Users for UsersImpl {
     fn create_user(&mut self, username: String, password: String) -> Result<(), String> {
         let user_exists = self.username_to_user.contains_key(&username);
